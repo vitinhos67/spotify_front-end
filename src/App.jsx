@@ -41,10 +41,11 @@ function App(props) {
       console.log(datesArtists.data);
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < datesArtists.data.length; i++) {
-        texto += `<br>
-        <label> Artist: ${datesArtists.data[i][0].name} </label>
-        <a href="${datesArtists.data[i][0].external_urls.spotify}" target="_blank">Open profile in Spotify</a>
-        <br>
+        texto += `
+        <div class="artists">
+        <h4 class="name-artist">Artist: ${datesArtists.data[i][0].name}</h4>
+        <a href="${datesArtists.data[i][0].external_urls.spotify}" class="link-artist" target="_blank">Open profile in Spotify</a>
+        </div>
         `;
       }
 
@@ -53,21 +54,24 @@ function App(props) {
   };
 
   return (
+
     <div>
-      <form onSubmit={handleSubmitField}>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <header className="nav-bar">
+        <form onSubmit={handleSubmitField} className="form-search">
+          <label htmlFor="name">
+            <input
+              type="name"
+              name="fieldSearchValue"
+              placeholder="Find Artists/Album"
+              className="form-create-user"
+            />
+            <button type="submit" onClick={whenShildChange}>Search</button>
+          </label>
 
-        <label htmlFor="name">
-          <input
-            type="name"
-            name="fieldSearchValue"
-            placeholder="Find Artists/Album"
-            className="form-create-user"
-          />
-        </label>
+        </form>
+      </header>
 
-        <button type="submit" onClick={whenShildChange}>Cadastrar</button>
-
-      </form>
       <div id="res">
         Test
       </div>
