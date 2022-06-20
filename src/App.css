@@ -45,22 +45,43 @@
     background: #0b7dda;
   }
 
-.artists {
+.artists_panel-content {
     border:solid 1px;
-    width: 400px;
-    text-align: center;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    width: 500px;
+    height: auto;
+    margin-top: 30px;
+   
+}
+.artists {
+    
+    width: 300px;
     height: 100%;
+    margin-top: 5%;
+    margin-left: 20%;
 }
 
-.name-artist {
-    float: left;
+.artists_name_field {
+    
+    height: 10px;
+    margin-top: 10px;
+    color: #272b2c;
+    text-align: center;
 }
 
-.link-artist {
-    float: left;
-    width: 30%;
-    padding: 15px;
+.name_track_field {
+    width: auto;
+    color:black;
+    text-align: center;
+}
+
+.artists_panel-content button {
+    width: 20%; 
+    margin: 0 auto;
+    margin-left: 125px;
+    margin-block-end: 10;
+}
+
+.grid-image {
+    width: 300px;
+    margin-left: -10px;
 }

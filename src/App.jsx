@@ -39,15 +39,25 @@ function App(props) {
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < datesArtists.data.length; i++) {
         texto += `
+        <div class="artists_panel-content">
         <div class="artists">
-        <h4 class="name-artist">Artist: ${datesArtists.data[i].artists[0].name}</h4>
-        <a href="${datesArtists.data[i].artists[0].external_urls.spotify}" class="link-artist" target="_blank">Open profile in Spotify</a>
+        <img src="https://diy-magazine.s3.amazonaws.com/d/diy/Artists/P/Palace/_1500x1000_crop_center-center_75_none/Palace-Press-2016.jpg" class="grid-image">
+        <h4 class="artists_name_field"> ${datesArtists.data[i].artists[0].name}</h4>
+        <h6 class="name_track_field">${datesArtists.data[i].name_track}</h6>
+        </div>
+        
+        <a href="${datesArtists.data[i].artists[0].external_urls.spotify}" 
+        class="link-artist" 
+        target="_blank">
+        <button type ="submit">Artista no spotify</button>
+        </a>
+        
         </div>
         `;
       }
 
       res.innerHTML = texto;
-    }, 2000);
+    }, 1000);
   };
 
   return (
