@@ -11,8 +11,6 @@ function App(props) {
     const value = Object.fromEntries(formData);
 
     const q = value.fieldSearchValue;
-    console.log(q);
-
     const query = new URLSearchParams({
       q,
     });
@@ -37,16 +35,16 @@ function App(props) {
       let texto = '';
 
       // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < datesArtists.data.length; i++) {
+      for (let i = 0; i < datesArtists.data.tracks.items.length; i++) {
         texto += `
         <div class="artists_panel-content">
         <div class="artists">
         <img src="https://diy-magazine.s3.amazonaws.com/d/diy/Artists/P/Palace/_1500x1000_crop_center-center_75_none/Palace-Press-2016.jpg" class="grid-image">
-        <h4 class="artists_name_field"> ${datesArtists.data[i].artists[0].name}</h4>
-        <h6 class="name_track_field">${datesArtists.data[i].name_track}</h6>
+        <h4 class="artists_name_field">${datesArtists.data.tracks.items[i].artists[0].name}</h4>
+        <h6 class="name_track_field">${datesArtists.data.tracks.items[i].name}</h6>
         </div>
         
-        <a href="${datesArtists.data[i].artists[0].external_urls.spotify}" 
+        <a href="${datesArtists.data.tracks.items[i].artists[0].external_urls.spotify}" 
         class="link-artist" 
         target="_blank">
         <button type ="submit">Artista no spotify</button>
