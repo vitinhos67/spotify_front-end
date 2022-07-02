@@ -1,6 +1,10 @@
-.form-create-user {
-    margin: 5px;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0 
 }
+
 
 .nav-bar {
     border:1px;
@@ -8,15 +12,6 @@
     height: 75px;
     background-color: rgb(1, 19, 59);
 }
-
-.form-search label {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    padding: 10px;
-    
-}
-
 .form-search input {
     width: 300px;
     height: 30px;
@@ -25,7 +20,13 @@
     border: #0b7dda;
     border-radius: 10px;
 }
-
+.form-search label {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 10px;
+    
+}
 .form-search button {
     float: left;
     width: 10% ;
@@ -45,43 +46,44 @@
     background: #0b7dda;
   }
 
-.artists_panel-content {
+.artists_painel-content {
     border:solid 1px;
-    width: 500px;
-    height: auto;
-    margin-top: 30px;
+    width: 500px;  
+    margin-top: 5px;
+    
    
 }
-.artists {
-    
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 300px;
     height: 100%;
     margin-top: 5%;
     margin-left: 20%;
 }
 
-.artists_name_field {
-    
-    height: 10px;
-    margin-top: 10px;
+.name_track {
+    margin-top: 20px;
     color: #272b2c;
-    text-align: center;
+    
 }
 
-.name_track_field {
-    width: auto;
+.artists_name{
     color:black;
-    text-align: center;
 }
 
-.artists_panel-content button {
-    width: 20%; 
-    margin: 0 auto;
-    margin-left: 125px;
-    margin-block-end: 10;
+.artists_painel-content button {
+    color: #272b2c;
+    border: white;
+}
+
+.artists_painel-content button:hover {
+    background: #142c9b;
+    color:white
 }
 
 .grid-image {
-    width: 300px;
-    margin-left: -10px;
+    width: 150px;
+    
 }

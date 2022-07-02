@@ -4,13 +4,15 @@ import './App.css';
 
 function App(props) {
   const [datesArtists, setDatesArtists] = useState({});
-
+  const [searchShild, setSearchShild] = useState('');
   const handleSubmitField = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const value = Object.fromEntries(formData);
 
     const q = value.fieldSearchValue;
+    setSearchShild(q);
+
     const query = new URLSearchParams({
       q,
     });
@@ -35,22 +37,25 @@ function App(props) {
       let texto = '';
 
       // eslint-disable-next-line no-plusplus
+
+      console.log(datesArtists.data.tracks.items[0].album.images[0].url);
+      // eslint-disable-next-line no-plusplus
       for (let i = 0; i < datesArtists.data.tracks.items.length; i++) {
-        texto += `
-        <div class="artists_panel-content">
-        <div class="artists">
-        <img src="https://diy-magazine.s3.amazonaws.com/d/diy/Artists/P/Palace/_1500x1000_crop_center-center_75_none/Palace-Press-2016.jpg" class="grid-image">
-        <h4 class="artists_name_field">${datesArtists.data.tracks.items[i].artists[0].name}</h4>
-        <h6 class="name_track_field">${datesArtists.data.tracks.items[i].name}</h6>
-        </div>
-        
+        texto += `        
+        <div class="artists_painel-content">
+        <div class="container">
+         <img src="${datesArtists.data.tracks.items[i].album.images[0].url}" class="grid-image">
+         
+        <h4 class="name_trackartists_name">${datesArtists.data.tracks.items[i].name}</h4>
+        <h6 class="artists_name">${datesArtists.data.tracks.items[i].artists[0].name}</h6>
         <a href="${datesArtists.data.tracks.items[i].artists[0].external_urls.spotify}" 
         class="link-artist" 
         target="_blank">
         <button type ="submit">Artista no spotify</button>
         </a>
-        
         </div>
+        </div>
+        
         `;
       }
 
